@@ -1,27 +1,59 @@
 ﻿
 
 
+
 namespace Personalregister
 {
     internal class Program
     {
         private static Payroll payroll = new Payroll(); 
         static void Main(string[] args)
-        {
-            Payroll payroll = new Payroll(); 
-            //Employee emp = new Employee("Kalle",25000);         
+        {   
 
             SeedData();
-            Console.ReadKey(); 
+            do
+            {
+                ShowMainMenu();
+                string input = Console.ReadLine() ?? string.Empty;
+
+                switch (input)
+                {
+                    case "1":
+                        break;
+                    case "2":
+                        PrintEmployees();
+                        break;
+                    case "Q":
+                        break;
+                    default:
+                        break;
+                }
+            }
+            while (true);
+        }
+
+        private static void PrintEmployees()
+        {
+            List<Employee> employess = payroll.GetEmployees();
+
+            foreach (Employee employee in employess)
+            {
+                Console.WriteLine($"Name {employee.Name} Salary: {employee.Salary}");
+            }
+        }
+
+        private static void ShowMainMenu()
+        {
+            Console.WriteLine($"1.Add {Environment.NewLine}2.Print {Environment.NewLine}Q.Exit");
         }
 
         private static void SeedData()
         {
-            payroll.AddEmployee("Nisse", 30000);            
+            payroll.AddEmployee("Örjan", 30000);            
             payroll.AddEmployee("Anna", 35000);            
             payroll.AddEmployee("Kalle", 40000);            
-            payroll.AddEmployee("Stina", 45000);            
-            payroll.AddEmployee("Sven", 50000);            
+            payroll.AddEmployee("Åsa", 45000);            
+            payroll.AddEmployee("Åke", 50000);            
         }
     }
 }
