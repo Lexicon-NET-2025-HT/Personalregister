@@ -20,6 +20,8 @@
             }
         }
 
+        public static int Count { get; set; } 
+
         //public int Age { get; set; }
 
         public int Salary { get;}
@@ -34,7 +36,8 @@
         {
             _name = name;
             _age = age;
-            Salary = salary; 
+            Salary = salary;
+            Count++; 
         }
         //public Robot(string name)
         //{
