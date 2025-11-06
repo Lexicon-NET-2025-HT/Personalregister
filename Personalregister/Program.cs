@@ -1,10 +1,12 @@
-﻿using PersonalRegister.Helpers;
+﻿using PersonalRegister.Abstractions;
+using PersonalRegister.Helpers;
 
 namespace Personalregister
 {
     internal class Program
     {
         private static Payroll _payroll = new Payroll();
+        private static ConsoleUI _ui = new(); 
         static void Main(string[] args)
         {
 
@@ -12,7 +14,7 @@ namespace Personalregister
             do
             {
                 ShowMainMenu();
-                string input = Console.ReadLine() ?? string.Empty;
+                string input = _ui.GetInput();
 
                 switch (input)
                 {
@@ -47,13 +49,13 @@ namespace Personalregister
             //employees[0].Name = "Sten-Ove"; 
             foreach (Employee employee in employees)
             {
-                Console.WriteLine(employee.Print());
+               _ui.Print(employee.Print());
             }
         }
 
         private static void ShowMainMenu()
         {
-            Console.WriteLine($"{MenuHelpers.Add}.Add {Environment.NewLine}{MenuHelpers.Print}.Print {Environment.NewLine}{MenuHelpers.Quit}.Quit");
+            _ui.Print($"{MenuHelpers.Add}.Add {Environment.NewLine}{MenuHelpers.Print}.Print {Environment.NewLine}{MenuHelpers.Quit}.Quit");
         }
 
         private static void SeedData()

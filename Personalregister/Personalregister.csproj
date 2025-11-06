@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PersonalRegister.Abstractions\PersonalRegister.Abstractions.csproj" />
     <ProjectReference Include="..\PersonalRegister.Helpers\PersonalRegister.Helpers.csproj" />
   </ItemGroup>
 

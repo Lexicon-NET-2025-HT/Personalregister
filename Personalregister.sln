@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Personalregister", "Persona
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonalRegister.Helpers", "PersonalRegister.Helpers\PersonalRegister.Helpers.csproj", "{6DD831FE-EDC8-4166-AE74-186BC4B76BE4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonalRegister.Abstractions", "PersonalRegister.Abstractions\PersonalRegister.Abstractions.csproj", "{B0B7EA02-16D4-4264-A74B-34093EFE8741}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{6DD831FE-EDC8-4166-AE74-186BC4B76BE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6DD831FE-EDC8-4166-AE74-186BC4B76BE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6DD831FE-EDC8-4166-AE74-186BC4B76BE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0B7EA02-16D4-4264-A74B-34093EFE8741}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0B7EA02-16D4-4264-A74B-34093EFE8741}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0B7EA02-16D4-4264-A74B-34093EFE8741}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0B7EA02-16D4-4264-A74B-34093EFE8741}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
