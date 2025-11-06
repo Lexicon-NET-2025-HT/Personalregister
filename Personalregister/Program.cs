@@ -1,12 +1,10 @@
-﻿
-
-
+﻿using PersonalRegister.Helpers;
 
 namespace Personalregister
 {
     internal class Program
     {
-        private static Payroll _payroll = new Payroll(); 
+        private static Payroll _payroll = new Payroll();
         static void Main(string[] args)
         {   
 
@@ -35,25 +33,7 @@ namespace Personalregister
 
         private static void AddEmployee()
         {
-            string name;
-            bool success = false;
-
-            do
-            {
-                Console.WriteLine("Name: ");
-                name = Console.ReadLine()!;
-
-                if (string.IsNullOrWhiteSpace(name))
-                {
-                    Console.WriteLine("You must enter a valid name");
-                }
-                else
-                {
-                    success = true;
-                }
-            }
-            while (!success);
-
+           string name =  Util.AskForString("Name");
             Console.WriteLine(name);
 
             //_payroll.AddEmployee(name, salary); 
