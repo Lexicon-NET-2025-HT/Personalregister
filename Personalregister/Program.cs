@@ -6,7 +6,7 @@ namespace Personalregister
 {
     internal class Program
     {
-        private static Payroll payroll = new Payroll(); 
+        private static Payroll _payroll = new Payroll(); 
         static void Main(string[] args)
         {   
 
@@ -19,6 +19,7 @@ namespace Personalregister
                 switch (input)
                 {
                     case "1":
+                        AddEmployee(); 
                         break;
                     case "2":
                         PrintEmployees();
@@ -32,14 +33,41 @@ namespace Personalregister
             while (true);
         }
 
+        private static void AddEmployee()
+        {
+            string name;
+            bool success = false;
+
+            do
+            {
+                Console.WriteLine("Name: ");
+                name = Console.ReadLine()!;
+
+                if (string.IsNullOrWhiteSpace(name))
+                {
+                    Console.WriteLine("You must enter a valid name");
+                }
+                else
+                {
+                    success = true;
+                }
+            }
+            while (!success);
+
+            Console.WriteLine(name);
+
+            //_payroll.AddEmployee(name, salary); 
+
+        }
+
         private static void PrintEmployees()
         {
-            IEnumerable<Employee> employees = payroll.GetEmployees();
+            IEnumerable<Employee> employees = _payroll.GetEmployees();
 
             //employees[0].Name = "Sten-Ove"; 
             foreach (Employee employee in employees)
             {
-                Console.WriteLine(employee);
+                Console.WriteLine(employee.Print());
             }
         }
 
@@ -50,11 +78,11 @@ namespace Personalregister
 
         private static void SeedData()
         {
-            payroll.AddEmployee("Örjan", 30000);            
-            payroll.AddEmployee("Anna", 35000);            
-            payroll.AddEmployee("Kalle", 40000);            
-            payroll.AddEmployee("Åsa", 45000);            
-            payroll.AddEmployee("Åke", 50000);            
+            _payroll.AddEmployee("Örjan", 30000);            
+            _payroll.AddEmployee("Anna", 35000);            
+            _payroll.AddEmployee("Kalle", 40000);            
+            _payroll.AddEmployee("Åsa", 45000);            
+            _payroll.AddEmployee("Åke", 50000);            
         }
     }
 }
