@@ -4,9 +4,9 @@
     {
 
         public string Name { get; set; }
-        public int Salary { get; set; }
+        public uint Salary { get; set; }
 
-        public Employee(string name, int salary)
+        public Employee(string name, uint salary)
         {
             this.Name = name;
             Salary = salary;

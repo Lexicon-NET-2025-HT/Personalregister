@@ -6,7 +6,7 @@ namespace Personalregister
     {
         private static Payroll _payroll = new Payroll();
         static void Main(string[] args)
-        {   
+        {
 
             SeedData();
             do
@@ -17,12 +17,13 @@ namespace Personalregister
                 switch (input)
                 {
                     case "1":
-                        AddEmployee(); 
+                        AddEmployee();
                         break;
                     case "2":
                         PrintEmployees();
                         break;
                     case "Q":
+                        Environment.Exit(0); 
                         break;
                     default:
                         break;
@@ -33,10 +34,9 @@ namespace Personalregister
 
         private static void AddEmployee()
         {
-           string name =  Util.AskForString("Name");
-            Console.WriteLine(name);
-
-            //_payroll.AddEmployee(name, salary); 
+            string name = Util.AskForString("Name");
+            uint salary = Util.AskForUInt("Salary");
+            _payroll.AddEmployee(name, salary); 
 
         }
 
@@ -58,11 +58,11 @@ namespace Personalregister
 
         private static void SeedData()
         {
-            _payroll.AddEmployee("Örjan", 30000);            
-            _payroll.AddEmployee("Anna", 35000);            
-            _payroll.AddEmployee("Kalle", 40000);            
-            _payroll.AddEmployee("Åsa", 45000);            
-            _payroll.AddEmployee("Åke", 50000);            
+            _payroll.AddEmployee("Örjan", 30000);
+            _payroll.AddEmployee("Anna", 35000);
+            _payroll.AddEmployee("Kalle", 40000);
+            _payroll.AddEmployee("Åsa", 45000);
+            _payroll.AddEmployee("Åke", 50000);
         }
     }
 }
