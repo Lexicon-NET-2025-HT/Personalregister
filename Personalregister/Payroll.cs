@@ -15,9 +15,8 @@
             _employees.Add(employee);
         }
 
-        public List<Employee> GetEmployees()
-        {
-            //ToDo: Fix this, not good
+        public IEnumerable<Employee> GetEmployees()
+        {            
             return _employees;
         }
     }

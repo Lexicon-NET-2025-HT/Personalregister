@@ -34,11 +34,12 @@ namespace Personalregister
 
         private static void PrintEmployees()
         {
-            List<Employee> employess = payroll.GetEmployees();
+            IEnumerable<Employee> employees = payroll.GetEmployees();
 
-            foreach (Employee employee in employess)
+            //employees[0].Name = "Sten-Ove"; 
+            foreach (Employee employee in employees)
             {
-                Console.WriteLine($"Name {employee.Name} Salary: {employee.Salary}");
+                Console.WriteLine(employee);
             }
         }
 
