@@ -11,9 +11,9 @@ namespace Personalregister
     internal class Main
     {
         private IUI _ui;
-        private Payroll _payroll;
+        private IPayroll _payroll;
 
-        public Main(IUI ui, Payroll payroll)
+        public Main(IUI ui, IPayroll payroll)
         {
             _ui = ui;
             _payroll = payroll;
@@ -71,7 +71,7 @@ namespace Personalregister
 
         private void SeedData()
         {
-            _payroll.AddEmployee("Örjan", 30000);
+            _payroll.AddEmployee("  ", 30000);
             _payroll.AddEmployee("Anna", 35000);
             _payroll.AddEmployee("Kalle", 40000);
             _payroll.AddEmployee("Åsa", 45000);

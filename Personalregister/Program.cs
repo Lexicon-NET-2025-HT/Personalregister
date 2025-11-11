@@ -13,7 +13,26 @@ namespace Personalregister
             IUI ui = new ConsoleUI(); 
 
             Main main = new Main(ui, payroll);
-            main.Run();
+            try
+            {
+             main.Run();
+
+            }
+            catch (ArgumentException ex)
+            {
+
+                throw;
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+            finally
+            {
+
+            }
+            
         }
 
         

@@ -1,12 +1,12 @@
 ﻿namespace Personalregister
 {
-    internal class Payroll
+    internal class Payroll : IPayroll
     {
-        private List<Employee> _employees; 
+        private List<Employee> _employees;
 
         public Payroll()
         {
-            _employees = new List<Employee>(); 
+            _employees = new List<Employee>();
         }
 
         public void AddEmployee(string name, uint salary)
@@ -16,8 +16,8 @@
         }
 
         public IEnumerable<Employee> GetEmployees()
-        {            
-            return _employees;
+        {
+            return _employees.ToList();
         }
     }
 }
